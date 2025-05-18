@@ -1,12 +1,16 @@
 package car;
 
+import java.util.Scanner;
+
 public class Vehicle {
+	Scanner scanner = new Scanner(System.in);
 	
 	private String name;
 	private String color;
 	protected int distance = 0;
 	private int x = 0;
 	private int velocity = 0;
+	private int time = 0;
 	
 	//コンストラクタ
 	Vehicle(String name, String color){
@@ -28,6 +32,9 @@ public class Vehicle {
 	public int getX() {
 		return this.x;
 	}
+	public int getTime() {
+		return this.time;
+	}
 	
 	//セッター
 	public void setName(String name) {
@@ -38,6 +45,29 @@ public class Vehicle {
 	}
 	public void setVelocity(int velocity) {
 		this.velocity = velocity;
+	}
+	
+	//速度・時間の入力
+	public void inputData() {
+		
+		System.out.println("-----------------");
+		while(true) {
+			//速度の入力
+			System.out.print("速度を入力してください：");
+			int carVelocity = scanner.nextInt();
+			//時間の入力
+			System.out.print("走行時間を入力してください：");
+			int carTime = scanner.nextInt();
+			
+			if(carVelocity > 0 && carTime > 0) {
+				this.velocity = carVelocity;
+				this.time = carTime;
+				break;
+			}else {
+				System.out.println("速度・時間は整数で入力してください");
+			}
+		}
+		
 	}
 	
 	//データの表示
