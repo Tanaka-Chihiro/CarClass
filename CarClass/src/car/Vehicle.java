@@ -43,9 +43,6 @@ public class Vehicle {
 	public void setColor(String color) {
 		this.color = color;
 	}
-	public void setVelocity(int velocity) {
-		this.velocity = velocity;
-	}
 	
 	//速度・時間の入力
 	public void inputData() {
